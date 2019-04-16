@@ -16,13 +16,13 @@
   (display ")"))
 
 (define (make-segment start-point end-point)
-  (list start-point end-point))
+  (cons start-point end-point))
 (define (start-segment segment) (car segment))
-(define (end-segment segment) (car (cdr segment)))
+(define (end-segment segment) (cdr segment))
 
-(define (make-point x y) (list x y))
+(define (make-point x y) (cons x y))
 (define (x-point point) (car point))
-(define (y-point point) (car (cdr point)))
+(define (y-point point) (cdr point))
 
 (define (midpoint-segment segment)
   (let ((start (start-segment segment))
