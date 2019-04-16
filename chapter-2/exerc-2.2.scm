@@ -6,12 +6,26 @@
 ;representation. Finally, using your selectors and constructors, define a procedure midpoint-segment that
 ;takes a line segment as argument and returns its midpoint (the point whose coordinates are the average of the
 ;coordinates of the endpoints). To try your procedures, you'll need a way to print points:
-;
-;(define (print-point p)
-;  (newline)
-;  (display "(")
-;  (display (x-point p))
-;  (display ",")
-;  (display (y-point p))
-;  (display ")"))
 
+(define (print-point p)
+  (newline)
+  (display "(")
+  (display (x-point p))
+  (display ",")
+  (display (y-point p))
+  (display ")"))
+
+(define (make-segment start-point end-point)
+  (list start-point end-point))
+(define (start-segment segment) (car segment))
+(define (end-segment segment) (car (cdr segment)))
+
+(define (make-point x y) (list x y))
+(define (x-point point) (car point))
+(define (y-point point) (car (cdr point)))
+
+(define (midpoint-segment segment)
+  (let ((start (start-segment segment))
+	(end (end-segment segment)))
+	(make-point (/(+ (x-point start) (x-point end)) 2)
+		    (/(+ (y-point start) (y-point end)) 2))))
