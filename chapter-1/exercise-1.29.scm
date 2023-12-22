@@ -2,7 +2,9 @@
 (if (> a b)
 0
 (+ (term a)
-(sum term (next a) next b))))
+   (sum term (next a) next b))))
+
+(define (cube x) (* x x x))
 
 (define (inc n) (+ n 1))
 (define (sum-cubes a b)
@@ -18,6 +20,8 @@
 (define (pi-next x)
 (+ x 4))
 (sum pi-term a pi-next b))
+
+;; And calculate Pi
 (* 8 (pi-sum 1 1000))
 
 (define (integral f a b dx)

@@ -15,7 +15,7 @@
 
 (define (d n)
   (cond ((= (modulo n 3) 2)
-         (* 2 (+ 1 (floor(/ n 3)))))
+         (* 2 (+ 1 (floor (/ n 3)))))
         (else
          1)))
 (define e

@@ -30,6 +30,7 @@
 ;generates an iterative process, write one that generates a recursive process.
 (define (inc n)
   (+ 1 n))
+
 (define (cont-frac n d k)
   (define (cont-frac-int kk)
     (cond ((= kk k)
@@ -39,6 +40,7 @@
 
 (define (dec n)
   (- n 1))
+
 (define (cont-frac-iter n d k)
   (define (cont-frac-int sum kk)
     (cond ((= kk 0)

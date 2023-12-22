@@ -8,6 +8,7 @@
 
 (define (dec n)
   (- n 1))
+
 (define (cont-frac-iter n d k)
   (define (cont-frac-int sum kk)
     (cond ((= kk 0)

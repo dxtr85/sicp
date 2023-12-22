@@ -9,21 +9,21 @@
   (/ (+ a b) 2))
 (define (fixed-point f first-guess)
 (define (close-enough? v1 v2)
-(< (abs (- v1 v2)) tolerance))
+  (< (abs (- v1 v2)) tolerance))
 (define (try guess)
   (let ((next (f guess)))
     (newline)
     (display "Trying: ")
     (display next)
 (if (close-enough? guess next)
-next
-(try next))))
+    next
+    (try next))))
 (try first-guess))
 
 (define (x^x y)
-(fixed-point (lambda (x) (/ (log y) (log x)))
-10.0))
+  (fixed-point (lambda (x) (/ (log y) (log x)))
+	       10.0))
 
 (define (x^xb y)
-(fixed-point (lambda (x) (average x (/ (log y) (log x))))
-10.0))
+  (fixed-point (lambda (x) (average x (/ (log y) (log x))))
+	       10.0))

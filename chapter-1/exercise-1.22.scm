@@ -37,7 +37,7 @@
 (define (search-for-primes start-from quantity-to-find)
   (if (= 0 quantity-to-find)
       (display "Done.")
-       (if (timed-prime-test start-from)
-	   (search-for-primes (next-odd start-from) (- quantity-to-find 1))
+      (if (timed-prime-test start-from)
+	   (search-for-primes (next-odd start-from) (- quantity-to-find 1)
 	   (search-for-primes (next-odd start-from) quantity-to-find))))
 
